@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="ta">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Z Fitness - App Screenshots</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            background-color: #f5f5f7;
+            color: #1d1d1f;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 50px 20px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        h1 {
+            font-size: 36px;
+            font-weight: 600;
+        }
+
+        .back-link {
+            text-decoration: none;
+            color: #0066cc;
+            font-size: 16px;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+
+        /* Section Styling */
+        .section-title {
+            font-size: 24px;
+            margin: 40px 0 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #ddd;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .badge {
+            font-size: 12px;
+            padding: 4px 12px;
+            border-radius: 20px;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+
+        .badge-free { background: #e8e8ed; color: #555; }
+        .badge-premium { background: #1d1d1f; color: gold; }
+
+        /* Grid Layout */
+        .photo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .photo-card {
+            background: white;
+            padding: 10px;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+            cursor: pointer; /* கை அடையாளம் காட்டும் */
+        }
+
+        .photo-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .photo-card img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            display: block;
+        }
+
+        .photo-label {
+            text-align: center;
+            margin-top: 10px;
+            font-size: 14px;
+            color: #86868b;
+        }
+
+        /* --- Image Preview (Lightbox) Styles --- */
+        .image-viewer {
+            display: none; /* ஆரம்பத்தில் மறைந்திருக்கும் */
+            position: fixed;
+            z-index: 999;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            justify-content: center;
+            align-items: center;
+            cursor: zoom-out;
+        }
+
+        .image-viewer img {
+            max-width: 90%;
+            max-height: 85vh;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(255,255,255,0.2);
+            animation: zoom 0.3s ease;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 35px;
+            color: #fff;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        @keyframes zoom {
+            from {transform: scale(0.7); opacity: 0;}
+            to {transform: scale(1); opacity: 1;}
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 28px; }
+            .photo-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <a href="index.html" class="back-link">← Back to Home</a>
+        
+        <header>
+            <h1>App Screenshots</h1>
+            <p style="color: #86868b;">Explore the features of Z Fitness</p>
+        </header>
+
+        <h2 class="section-title">
+            Free Version <span class="badge badge-free">Basic Access</span>
+        </h2>
+        <div class="photo-grid">
+            <div class="photo-card" onclick="openViewer(this)">
+                <img src="free1.jpg" alt="Free Version Home">
+                <p class="photo-label">Home Screen</p>
+            </div>
+            
+            <div class="photo-card" onclick="openViewer(this)">
+                <img src="free2.jpg" alt="Free Version Workouts">
+                <p class="photo-label">Basic Workouts</p>
+            </div>
+            
+            <div class="photo-card" onclick="openViewer(this)">
+                <img src="free3.jpg" alt="Free Version Progress">
+                <p class="photo-label">Food Nutrition</p>
+            </div>
+            
+            <div class="photo-card" onclick="openViewer(this)">
+                <img src="free4.jpg" alt="Free Version Progress">
+                <p class="photo-label">Workouts Plan</p>
+            </div>
+        </div>
+
+        <h2 class="section-title" style="margin-top: 60px;">
+            Premium Version <span class="badge badge-premium">★ VIP Access</span>
+        </h2>
+        <div class="photo-grid">
+            <div class="photo-card" onclick="openViewer(this)">
+                <img src="premium1.jpg" alt="Premium Dashboard">
+                <p class="photo-label">Advanced Dashboard</p>
+            </div>
+            
+            <div class="photo-card" onclick="openViewer(this)">
+                <img src="premium2.jpg" alt="Personal Coaching">
+                <p class="photo-label">💧WaterL Intake
+</p>
+            </div>
+            
+            <div class="photo-card" onclick="openViewer(this)">
+                <img src="premium3.jpg" alt="Nutrition Traker">
+                <p class="photo-label">Nutrition Traker</p>
+            </div>
+            
+            <div class="photo-card" onclick="openViewer(this)">
+                <img src="premium4.jpg" alt="Plan & Rest Timer">
+                <p class="photo-label">⏳Plan & Rest Timer</p>
+            </div>
+            
+              <div class="photo-card" onclick="openViewer(this)">
+                <img src="premium5.jpg" alt="Food Nutrition">
+                <p class="photo-label">Food Nutrition</p>
+            </div>
+            
+              <div class="photo-card" onclick="openViewer(this)">
+                <img src="premium6.jpg" alt="Custom Diet Plans">
+                <p class="photo-label">Custom Diet Plans</p>
+            </div>
+            
+              <div class="photo-card" onclick="openViewer(this)">
+                <img src="premium7.jpg" alt="Side bar">
+                <p class="photo-label">Side bar </p>
+            </div>
+            
+              <div class="photo-card" onclick="openViewer(this)">
+                <img src="premium8.jpg" alt="Fitness Tools">
+                <p class="photo-label">Fitness Tools</p>
+            </div>
+            
+              <div class="photo-card" onclick="openViewer(this)">
+                <img src="premium9.jpg" alt="Calorie Calculator">
+                <p class="photo-label">Calorie Calculator</p>
+            </div>
+            
+              <div class="photo-card" onclick="openViewer(this)">
+                <img src="premium10.jpg" alt="Habit Tracker">
+                <p class="photo-label">Habit Tracker</p>
+            </div>
+            
+              <div class="photo-card" onclick="openViewer(this)">
+                <img src="premium11.jpg" alt="Daily Food Traker">
+                <p class="photo-label">Daily Food Traker</p>
+            </div>
+            
+              <div class="photo-card" onclick="openViewer(this)">
+                <img src="premium12.jpg" alt="Meditation">
+                <p class="photo-label">🎧 Meditation</p>
+            </div>
+            
+                <div class="photo-card" onclick="openViewer(this)">
+                <img src="premium13.jpg" alt="Nano Calculator">
+                <p class="photo-label">Nano Calculator</p>
+            </div>
+            
+            
+        </div>
+
+        <footer style="text-align: center; margin-top: 80px; padding-bottom: 40px; color: #86868b; font-size: 12px;">
+            &copy; 2026 Z Fitness. All Rights Reserved.
+        </footer>
+    </div>
+
+    <div id="viewer" class="image-viewer" onclick="closeViewer()">
+        <span class="close-btn">&times;</span>
+        <img id="fullImage" src="">
+    </div>
+
+    <script>
+        function openViewer(element) {
+            var viewer = document.getElementById("viewer");
+            var fullImg = document.getElementById("fullImage");
+            var clickedImg = element.getElementsByTagName("img")[0].src;
+            
+            fullImg.src = clickedImg;
+            viewer.style.display = "flex";
+        }
+
+        function closeViewer() {
+            document.getElementById("viewer").style.display = "none";
+        }
+    </script>
+
+</body>
+</html>
